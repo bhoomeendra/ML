@@ -1,7 +1,5 @@
 ---
 layout: home
-title: Add Connection back to home page
+title: ML Interview Preparation
 permalink: /
 ---
-
-This is a Jekyll theme for publishing a Gitbook like site.

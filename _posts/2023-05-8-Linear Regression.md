@@ -8,6 +8,14 @@ layout: post
 
 <!-- #### What is Linear Regression? -->
 The linear regression establishes a relationship between the dependent variable (y) and one or more independent variables (x) using a best-fit straight line. This means relationship between the dependent and independent variables is linear in nature.
+
+#### Different ways to solve Linear Regression
+1. __Normal Equation:__ The normal equation is a closed-form solution for linear regression (Gaussian Elimination). It finds the value of the regression coefficients that minimizes the sum of the squared residuals.  
+
+2. __Gradient Descent:__ Gradient descent is an iterative optimization algorithm that can be used to solve linear regression. It works by finding the minimum of a cost function, which is typically the sum of the squared residuals.
+
+3. __Singular Value Decomposition:__ The SVD is used because the data matrix is non-invertible hence we calcute its pseudo-inverse using SVD this is a great artricle explaning the same [Visit](https://sthalles.github.io/svd-for-regression/).
+
 #### Checks to apply before applying Linear Regression
 1. __Linearity:__ Linear relationship between dependent and independent variables that can be done using person correlation coefficient not the spearman correlation coefficient.
 2. __Normality:__ The residuals are normally distributed. This means that the residuals follow a bell-shaped curve, with most of the values clustered around the mean. The normality assumption is necessary because it allows us to use the standard techniques of statistical inference, such as hypothesis testing and confidence intervals. Violations of normality can lead to biased and inefficient estimates, and incorrect conclusions about the statistical significance of the independent variables.
@@ -23,11 +31,6 @@ The linear regression establishes a relationship between the dependent variable 
 6. __Use Partial Least Squares Regression:__ Partial least squares regression (PLS regression) is a regression method that is an alternative to ordinary least squares (OLS) regression. PLS regression is useful when you have a large number of correlated predictors, and you want to use them to predict an outcome, but you also want to reduce the number of predictors in your model. PLS regression is similar to principal components regression, but the key difference between the two methods is that PLS regression uses the response variable in the dimension reduction step, while principal components regression does not.
 
 #### What is the difference between L1 and L2 regularization?
-L2 regularization is also known as ridge regression. L1 also known as Lasso. The key difference between them is when we take derivative of the loss function for both, In L2 we see the update or change would be 2*coeff but in L1 it would be either 1 or -1. This is the reason why L1 regularization is used for feature selection and drives some of the coefficients to zero. 
-
-
-#### What are the ways to solve the Linear Regression?
-1. __Gradient Descent:__ Gradient descent is an iterative optimization algorithm that can be used to solve linear regression. It works by finding the minimum of a cost function, which is typically the sum of the squared residuals.
-2. __Matrix Inversion:__ We use the matrix inversion to solve for the coefficients. For this to work, the matrix should be invertible. From here, we get the condition of multicollinearity that the determinant of the matrix should not be zero for the existence of the inverse. Visit [here](https://en.wikipedia.org/wiki/Ordinary_least_squares)
+L2 regularization is also known as ridge regression. L1 also known as Lasso. The key difference between them is when we take derivative of the loss function for both, In L2 we see the update or change would be 2*coeff but in L1 it would be either 1 or -1. This is the reason why L1 regularization is used for feature selection and drives some of the coefficients to zero. [Visit](https://medium.com/@mukulranjan/how-does-lasso-regression-l1-encourage-zero-coefficients-but-not-the-l2-20e4893cba5d)
 
 # Interview Questions
