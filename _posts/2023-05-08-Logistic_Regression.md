@@ -6,6 +6,7 @@ category: Jekyll
 layout: post
 ---
 <!-- #### What is Logistic Regression? -->
+
 Logistic regression is linear regression over the log odds or logit of the probability of input belonging to a class. The model choice in logistic regression is the logits of the probability are linearly dependent on the independent variable. But the problem we solve with this is the __classification problem__. The output of the model is the probability of the input belonging to a class.
 $$ logit(p) = log(\frac{p}{p+1}) $$
 
@@ -17,9 +18,11 @@ $$ p = \frac{1}{1+e^{-(w^Tx+b)}}$$
 
 $$ p = \sigma(w^Tx+b)$$
 
-What sigmoid does is that it constrains the output between 0 and 1. This is one of the definitions of logistic regression. We can have a geometric explanation as well. We start with a classification boundary which is $$ w^Tx +b $$. We want a w such that $$ \forall i \; y_i(w^Tx_i+b)>=0  $$ this means that the predicted class and the actual class should be as for the term to be positive but using this as the objective function as some limitation. The problem is that when an outlier comes, the loss value will be very high, and the model will try to fit the outlier. To solve the problem sigmoid function is used as it constrains the values between 0 and 1.
+What sigmoid does is that it constrains the output between 0 and 1. This is one of the definitions of logistic regression. 
+### Geometric Formulation 
+We can have a geometric explanation as well. We start with a classification boundary which is $$ w^Tx +b $$. We want a w such that $$ \forall i \; y_i(w^Tx_i+b)>=0  $$ i.e the predicted class and the actual class are of the same sign for the product term to be positive but using a objective function which maximizes $$ \sum y_i(w^Tx_i+b) $$ has some limitation. The problem is that when an outlier comes, the loss value will be very high, and the model will try to fit the outlier. To solve the problem sigmoid function is used as it constrains the values between 0 and 1 which limits the impact of outlier.
 
-#### Formulation of the loss function
+### Formulation of the loss function
 The purpose of the loss function is to maximize the probability of the correct class. Logistic regression is a binary classification problem; hence we have two classes, 0 and 1. Higher probability is associated with class 1, and low probability is associated with class 0. The objective function is as follows:
 
 $$ L = \prod_{i=1}^n p_i^{y_i}(1-p_i)^{1-y_i} \; where \; p = \sigma(w^Tx+b) $$
@@ -34,7 +37,7 @@ $$ w^* = argmax_w L(w)$$
 
 But still, we have a problem which is that if when w tends to infinity, the we would have the maximum value of the objective function, which is not what we want. Hence we add a regularization term to the objective function. The objective function is as follows:
 
-$$ L = - \sum_{i=1}^n y_i log(\sigma(w^Tx_i+b)) + (1-y_i)log(1-\sigma(w^Tx_i+b)) + \lambda ww^T$$ 
+$$ L =  \sum_{i=1}^n y_i log(\sigma(w^Tx_i+b)) + (1-y_i)log(1-\sigma(w^Tx_i+b)) + \lambda ww^T$$ 
 
 <!-- This theme supports rendering beautiful math in inline and display modes using [MathJax 3](https://www.mathjax.org/) engine. You just need to surround your math expression with `$$`, like `$$ E = mc^2 $$`. If you leave it inside a paragraph, it will produce an inline expression, just like $$ E = mc^2 $$. -->
 
@@ -42,4 +45,16 @@ $$ L = - \sum_{i=1}^n y_i log(\sigma(w^Tx_i+b)) + (1-y_i)log(1-\sigma(w^Tx_i+b))
 
 <!-- $$\sum_{k=1}^\infty |\langle x, e_k \rangle|^2 \leq \|x\|^2$$ -->
 
-# Interview Questions
+### Interview Questions
+
+Should we normailze the data before giving it to the logistice regression algorithim?
+
+Yes we should normalize the data it would give use two problems first is the 
+
+- Interpretiblity of the weights/coffecient
+
+    - Interpretiblity of the weights/coffecient as because the coffecient indicats the impact on prediction when we have unit change in the feature but feats with differect scale can not be compaired with each other once we normalize (Min Max) or standardize ($$\mu =0 , \sigma =1$$) the data becomes unitless hence comparative interpretblity is possible which could indicate geniune feature importance.
+
+- Convergence of SGD
+
+    - The magnitude of gradient of depends on the values of the inputs which we can see for both squared loss and cross entorpy loss which mean that feature with higher values wil have bigger gradient and features with smaller values will have smaller gradient hence convergence would led to ossilation but when the data is normalized such problem is prevented. 
