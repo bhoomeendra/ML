@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ML/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ML/" rel="alternate" type="text/html" /><updated>2023-05-30T01:16:14+05:30</updated><id>http://localhost:4000/ML/feed.xml</id><title type="html">ML techniques</title><subtitle>This repo contains the solutions of coding interview questions from various sources.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ML/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ML/" rel="alternate" type="text/html" /><updated>2023-06-01T01:18:03+05:30</updated><id>http://localhost:4000/ML/feed.xml</id><title type="html">ML techniques</title><subtitle>This repo contains the solutions of coding interview questions from various sources.
 </subtitle><author><name>Bhoomeendra Singh Sisodiy</name></author><entry><title type="html">Logistic Regression</title><link href="http://localhost:4000/ML/jekyll/2023-05-08-Logistic_Regression.html" rel="alternate" type="text/html" title="Logistic Regression" /><published>2023-05-08T00:00:00+05:30</published><updated>2023-05-08T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Logistic_Regression</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-05-08-Logistic_Regression.html"><![CDATA[<!-- #### What is Logistic Regression? -->
 
 <p>Logistic regression is linear regression over the log odds or logit of the probability of input belonging to a class. The model choice in logistic regression is the logits of the probability are linearly dependent on the independent variable. But the problem we solve with this is the <strong>classification problem</strong>. The output of the model is the probability of the input belonging to a class.
@@ -60,7 +60,174 @@
       <li>The magnitude of gradient of depends on the values of the inputs which we can see for both squared loss and cross entorpy loss which mean that feature with higher values wil have bigger gradient and features with smaller values will have smaller gradient hence convergence would led to ossilation but when the data is normalized such problem is prevented.</li>
     </ul>
   </li>
-</ul>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Metrics</title><link href="http://localhost:4000/ML/jekyll/2023-05-08-Metrics.html" rel="alternate" type="text/html" title="Metrics" /><published>2023-05-08T00:00:00+05:30</published><updated>2023-05-08T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Metrics</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-05-08-Metrics.html"><![CDATA[]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Regularization</title><link href="http://localhost:4000/ML/jekyll/2023-05-08-Regularization.html" rel="alternate" type="text/html" title="Regularization" /><published>2023-05-08T00:00:00+05:30</published><updated>2023-05-08T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Regularization</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-05-08-Regularization.html"><![CDATA[]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Linear Regression</title><link href="http://localhost:4000/ML/jekyll/2023-05-08-Linear-Regression.html" rel="alternate" type="text/html" title="Linear Regression" /><published>2023-05-08T00:00:00+05:30</published><updated>2023-05-08T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Linear%20Regression</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-05-08-Linear-Regression.html"><![CDATA[<!-- #### What is Linear Regression? -->
+</ul>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Metrics</title><link href="http://localhost:4000/ML/jekyll/2023-05-08-Metrics.html" rel="alternate" type="text/html" title="Metrics" /><published>2023-05-08T00:00:00+05:30</published><updated>2023-05-08T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Metrics</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-05-08-Metrics.html"><![CDATA[<h2 id="classification-metrics">Classification Metrics</h2>
+<ol>
+  <li>
+    <p><strong>Accuracy:</strong></p>
+
+    <p>This is the most simple measure, defined as the number of accurate predictions divided by the total number of predictions. This will not be a very good metric as if we have imbalanced class labels, then the metric will be biased towards the majority class. Also, when the problem is multi-class, accuracy will not be a good measure as it does not consider the class information.</p>
+  </li>
+  <li>
+    <p><strong>Confusion Matrix:</strong></p>
+
+    <p>This is a table that shows the number of correct and incorrect predictions made by the classification model compared to the actual outcomes (target value) in the data. The matrix is NxN, where N is the number of target values (classes). Performance of such models is commonly evaluated using the data in the matrix. This gives us a complete picture of how well our model works with respect to all the classes.</p>
+
+    <p><strong>2x2 Confusion Matrix</strong></p>
+
+    <p>The confusion matrix is for a binary classifier the ground truth are of two types True or False and the prediction can be of two types Positive or Negative. So, the confusion matrix will have 4 values TP, TN, FP, FN.</p>
+
+    <p>TP: True Positive mean that when the ground truth is True and the prediction is positive.</p>
+
+    <p>TN: True Negative mean that when the ground truth is True and the prediction is negative.</p>
+
+    <p>FP: False Positive mean that when the ground truth is False and the prediction is positive.</p>
+
+    <p>FN: False Negative mean that when the ground truth is False and the prediction is negative.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th> </th>
+          <th>Prediction 1</th>
+          <th>Prediction 0</th>
+          <th>Groud Truth</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Label 1</td>
+          <td>TP</td>
+          <td>TN</td>
+          <td>TP+TN</td>
+        </tr>
+        <tr>
+          <td>Label 0</td>
+          <td>FP</td>
+          <td>FN</td>
+          <td>FP+FN</td>
+        </tr>
+        <tr>
+          <td>Predicted</td>
+          <td>TP+FP</td>
+          <td>TN+FN</td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p><strong>Precision:</strong></p>
+
+    <p>Precision is the ratio of correctly predicted positive observations to the total predicted positive observations. The question that this metric answers is of all the positive predictions, how many are actually positive. This metric is useful when the cost of False Positive is high. For example, in the case of death penalty, we would want to be very sure that the person is guilty before giving the death penalty. So, we would want to have a high precision.</p>
+
+\[Precision = \frac{TP}{(TP+FP)}\]
+  </li>
+  <li>
+    <p><strong>Recall:</strong></p>
+
+    <p>Recall is the ratio of correctly predicted positive observations to all observations in the actual class. The question recall answers is: Of all the positive classes, how many did we predict correctly? It is also called Sensitivity. The recall is a good measure to use when the cost of True Negative is high. For example, in the case of a natural calamity, we would want to alert as many people as possible, a wrong alert is not harmful, but a missed alert can be very harmful.</p>
+
+\[Recall = \frac{TP}{(TP+TN)}\]
+  </li>
+  <li>
+    <p>\(F_\beta\) Score</p>
+
+    <p>The \(F_\beta\) score is the weighted harmonic mean of precision and recall, reaching its optimal value at 1 and its worst value at 0. The \(F_\beta\) score weights recall more than precision by a factor of \(\beta\). \(\beta\) = 1.0 means recall and precision are equally important. for \(\beta &lt; 1.0\), precision is more important than recall and vice versa.</p>
+
+\[F_{\beta} =  \frac{1}{ \frac{\beta^2}{1 + \beta^2} . \frac{1}{Recall} +  \frac{1}{1 + \beta^2} . \frac{1}{Precision} }\]
+
+\[F_{\beta} = (1+\beta^2) \frac{Precision*Recall}{(\beta^2*Precision)+Recall}\]
+
+    <p>When \(\beta\) = 1.0, it is called F1 score, which is the harmonic mean of precision and recall.</p>
+
+\[F1 = 2 \frac{Precision*Recall}{Precision+Recall}\]
+
+    <p>When \(\beta\) = 0.5, it is called F0.5 score, which is the weighted harmonic mean of precision and recall.</p>
+
+\[F0.5 = \frac{1.25*Precision*Recall}{(0.25*Precision)+Recall}\]
+
+    <p>When \(\beta\) = 2.0, it is called F2 score, which is the weighted harmonic mean of precision and recall.</p>
+
+\[F2 = \frac{5*Precision*Recall}{(4*Precision)+Recall}\]
+
+    <p><strong>F1 Score Multiclass Classification</strong></p>
+
+    <ul>
+      <li>
+        <p><strong>F1 Macro</strong></p>
+
+        <p>We have to calculate the F1 score for each class and then take the average of all the F1 scores. This is called F1 Macro.</p>
+      </li>
+      <li>
+        <p><strong>F1 Micro</strong></p>
+
+        <p>We have to calculate the F1 with the global information of total FP, FN and TP.</p>
+      </li>
+      <li>
+        <p><strong>F1 Weighted</strong></p>
+
+        <p>We have to calculate the F1 score for each class and then take the weighted average of all the F1 scores. Weights are the number of samples in each class or can be user defined.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>AUC ROC Curve:</strong> <em>Needs revision</em></p>
+
+    <p>AUC ROC curve is a performance measurement for binary classification problems. ROC is a curve AUC is the area under the ROC curve. The ROC curve is a plot of the true positive rate (TPR) against the false positive rate (FPR) for a model which outputs probability. We use a threshold to predict the label, and these labels are used to calculate TPR and FPR. It shows the tradeoff between sensitivity and specificity. The closer the curve follows the upper left-hand border of the ROC space, the better the model (Why). The closer the curve comes to the 45-degree diagonal of the ROC space, the less accurate the test. The ROC curve is also called the receiver operating characteristic. The area under the ROC curve (AUC) is equal to the probability that a classifier will rank a randomly chosen positive instance higher than a randomly chosen negative one (assuming ‘positive’ ranks higher than ‘negative’).</p>
+  </li>
+</ol>
+
+<h4 id="questions">Questions</h4>
+<ol>
+  <li>
+    <p>What is the difference between accuracy and F1 score when the classes are balanced?</p>
+
+    <p>Accuracy is the same as F1 macro score when the classes are balanced, but F1 micro will still give a better score as it give equal weightage to all the classes and overall accuracy might look good, but internally, the prediction for some classes might not be good. Both accuracy and F1 macro score will not capture this.</p>
+  </li>
+</ol>
+
+<h2 id="regression-metrics">Regression Metrics</h2>
+<ol>
+  <li>Mean Absolute/Squared Error</li>
+  <li>Root Mean Squared Error # Units</li>
+  <li>R Squared</li>
+  <li>Adjusted R Squared</li>
+</ol>
+
+<h2 id="retrieval-metrics">Retrieval Metrics</h2>
+<ol>
+  <li>MAP</li>
+  <li>NDCG</li>
+  <li>Precision@K</li>
+  <li>Recall@K</li>
+  <li>MRR</li>
+  <li>BPREF
+https://www.pinecone.io/learn/offline-evaluation/</li>
+</ol>
+
+<h2 id="summarization-metrics">Summarization Metrics</h2>
+<ol>
+  <li>ROUGE</li>
+  <li>BLEU</li>
+  <li>METEOR</li>
+  <li>BERTScore</li>
+  <li>Perplexity</li>
+</ol>
+
+<h2 id="clustering-metrics">Clustering Metrics</h2>
+<ol>
+  <li>Silhouette Score</li>
+  <li>Inter and Intra Cluster Distance ratio</li>
+</ol>
+
+<h2 id="segmentation-metrics">Segmentation Metrics</h2>
+<ol>
+  <li>IoU</li>
+  <li>Precision</li>
+  <li>Recall</li>
+  <li>F1 Score</li>
+  <li>MAP</li>
+</ol>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Classification Metrics Accuracy:]]></summary></entry><entry><title type="html">Regularization</title><link href="http://localhost:4000/ML/jekyll/2023-05-08-Regularization.html" rel="alternate" type="text/html" title="Regularization" /><published>2023-05-08T00:00:00+05:30</published><updated>2023-05-08T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Regularization</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-05-08-Regularization.html"><![CDATA[]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Linear Regression</title><link href="http://localhost:4000/ML/jekyll/2023-05-08-Linear-Regression.html" rel="alternate" type="text/html" title="Linear Regression" /><published>2023-05-08T00:00:00+05:30</published><updated>2023-05-08T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Linear%20Regression</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-05-08-Linear-Regression.html"><![CDATA[<!-- #### What is Linear Regression? -->
 <p>The linear regression establishes a relationship between the dependent variable (y) and one or more independent variables (x) using a best-fit straight line. This means relationship between the dependent and independent variables is linear in nature.</p>
 
 <h4 id="different-ways-to-solve-linear-regression">Different ways to solve Linear Regression</h4>
