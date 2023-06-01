@@ -63,6 +63,14 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
                 e.preventDefault();
                 window.open('http://vkontakte.ru/share.php?url='+encodeURIComponent(location.href));
             }
+        },
+        'home': {
+            'label': 'Home',
+            'icon': 'fa fa-home',
+            'onClick': function(e) {
+                e.preventDefault();
+                window.open('https://bhoomeendra.github.io');
+            }
         }
     };
 
