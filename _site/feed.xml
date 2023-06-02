@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ML/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ML/" rel="alternate" type="text/html" /><updated>2023-06-01T13:05:51+05:30</updated><id>http://localhost:4000/ML/feed.xml</id><title type="html">ML techniques</title><subtitle>This repo contains the solutions of coding interview questions from various sources.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ML/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ML/" rel="alternate" type="text/html" /><updated>2023-06-03T02:25:19+05:30</updated><id>http://localhost:4000/ML/feed.xml</id><title type="html">ML techniques</title><subtitle>This repo contains the solutions of coding interview questions from various sources.
 </subtitle><author><name>Bhoomeendra Singh Sisodiy</name></author><entry><title type="html">Logistic Regression</title><link href="http://localhost:4000/ML/jekyll/2023-05-08-Logistic_Regression.html" rel="alternate" type="text/html" title="Logistic Regression" /><published>2023-05-08T00:00:00+05:30</published><updated>2023-05-08T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Logistic_Regression</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-05-08-Logistic_Regression.html"><![CDATA[<!-- #### What is Logistic Regression? -->
 
 <p>Logistic regression is linear regression over the log odds or logit of the probability of input belonging to a class. The model choice in logistic regression is the logits of the probability are linearly dependent on the independent variable. But the problem we solve with this is the <strong>classification problem</strong>. The output of the model is the probability of the input belonging to a class.
@@ -188,10 +188,58 @@
 
 <h2 id="regression-metrics">Regression Metrics</h2>
 <ol>
-  <li>Mean Absolute/Squared Error</li>
-  <li>Root Mean Squared Error # Units</li>
-  <li>R Squared</li>
-  <li>Adjusted R Squared</li>
+  <li>
+    <p><strong>Mean Absolute/Squared Error and Root Mean Squared Error</strong></p>
+
+    <p>The mean absolute error (MAE) We’ll calculate the average absolute error between actual and predicted values. The mean squared error (MSE) is very similar to the MAE, but it squares the difference before summing them all instead of using the absolute value. This means that large errors are penalized more than with the MAE. The root mean squared error (RMSE) is the square root of the MSE. It’s more popular than MSE because the RMSE is interpretable in the “y” units.</p>
+  </li>
+  <li>
+    <p><strong>R Squared</strong></p>
+
+    <p>A dataset has n values marked \(y_1,..,y_n\) (collectively known as \(y_i\) or as a vector \(y = [y_1,...,y_n]^T\)), each associated with a fitted (or modeled, or predicted) value \(f_1,...,f_n\) (known as $f_i$, or sometimes \(\hat{y_i}\), as a vector f).</p>
+
+    <p>Define the residuals as \(e_i = y_i − f_i\) (forming a vector e).</p>
+
+    <p>If \(\bar {y}\) is the mean of the observed data
+ then the variability of the data set can be measured with two sums of squares formulas:</p>
+
+    <ul>
+      <li>
+        <p>The sum of squares of residuals also called the residual sum of squares:</p>
+
+\[SS_{\text{res}}=\sum _{i}(y_{i}-f_{i})^{2}=\sum _{i}e_{i}^{2}\]
+      </li>
+      <li>
+        <p>The total sum of squares (proportional to the variance of the data):</p>
+
+\[SS_{\text{tot}}=\sum _{i}(y_{i}-{\bar {y}})^{2}\]
+      </li>
+    </ul>
+
+    <p>The most general definition of the coefficient of determination is
+ \(R^{2}=1-{SS_{\rm {res}} \over SS_{\rm {tot}}}\)</p>
+
+    <p>In the best case, the modeled values exactly match the observed values, which results in \(SS_{\text{res}}=0\) and \(R^{2}=1\). A baseline model, which always predicts \(\bar {y}\), will have \(R^{2}=0\). Models that have worse predictions than this baseline will have a negative \(R^{2}\).</p>
+
+    <p><strong>Fraction of variance unexplained</strong></p>
+
+    <p>In a general form, \(R^{2}\) can be seen to be related to the fraction of variance unexplained (FVU). The numerator in the equation represents unexplained variance, while the denominator represents total variance. The FVU is the ratio of unexplained variance to total variance:</p>
+
+\[R^{2}= \frac{ SS_{\rm {tot}} - SS_{\rm {res} }}{ SS_{\rm {tot}}}\]
+
+    <p><strong>Inflated R2</strong>
+ When we add a new estimator or variable into the regression model \(R^{2}\) goes up or at least will stay the same which not good because comparing models with different numbers of features will not be feasible with \(R^{2}\). <a href="https://math.stackexchange.com/questions/1976747/prove-that-r2-cannot-decrease-when-adding-a-variable">Proof 2</a></p>
+  </li>
+  <li>
+    <p><strong>Adjusted R Squared:</strong>
+ The use of an adjusted \(R^{2}\) (one common notation is \({\bar R}^{2}\), pronounced “R bar squared”; another is \(R_{\text{a}}^{2}\) or \(R_{\text{adj}}^{2}\)) is an attempt to account for the phenomenon of the \(R^{2}\) automatically increasing when extra explanatory variables are added to the model. There are many different ways of adjusting ([14]). By far the most used one, to the point that it is typically just referred to as adjusted R, is the correction proposed by Mordecai Ezekiel. The adjusted \(R^{2}\) is defined as</p>
+
+\[{\bar {R}}^{2}={1-{SS_{\text{res}}/{\text{df}}_{\text{res}} \over SS_{\text{tot}}/{\text{df}}_{\text{tot}}}}\]
+
+    <p>where dfres is the degrees of freedom of the estimate of the population variance around the model, and dftot is the degrees of freedom of the estimate of the population variance around the mean. dfres is given in terms of the sample size n and the number of variables p in the model, dfres =n − p. dftot is given in the same way, but with p being unity for the mean, i.e. dftot = n − 1.</p>
+
+    <p>The adjusted  \(R^{2}\) can be negative, and its value will always be less than or equal to that of \(R^{2}\).</p>
+  </li>
 </ol>
 
 <h2 id="retrieval-metrics">Retrieval Metrics</h2>
