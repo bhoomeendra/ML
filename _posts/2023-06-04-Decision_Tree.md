@@ -57,9 +57,19 @@ __Pros__
 3. Minimal impact of outliers.
 4. Decision tree can be used for feature selection.
 5. Decision tree can be used for regression and classification.
+6. Normalization and scaling of data is not required.
+
 
 __Cons__
 
 1. Decision tree is prone to overfitting.
 2. Decision tree is unstable, small changes in the data can lead to large changes in the structure of the decision tree.
 3. Decision tree can create biased trees if some classes dominate.
+
+### Regression Tree
+We minimize the sum of squared error at each split. And the prediction is the mean of the data points in the leaf node.
+
+1. For the first node the mean of the data would be the prediction. Now we will select a feature and threshold combination which will reduce the sum of squared error the most.
+
+2. We repeat the above step for all the child nodes until we reach the maximum depth of the tree or we reach the minimum number of data points in a leaf node.
+
