@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ML/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ML/" rel="alternate" type="text/html" /><updated>2023-06-04T11:40:21+05:30</updated><id>http://localhost:4000/ML/feed.xml</id><title type="html">ML techniques</title><subtitle>This repo contains the solutions of coding interview questions from various sources.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ML/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ML/" rel="alternate" type="text/html" /><updated>2023-06-04T15:15:07+05:30</updated><id>http://localhost:4000/ML/feed.xml</id><title type="html">ML techniques</title><subtitle>This repo contains the solutions of coding interview questions from various sources.
 </subtitle><author><name>Bhoomeendra Singh Sisodiy</name></author><entry><title type="html">Logistic Regression</title><link href="http://localhost:4000/ML/jekyll/2023-05-08-Logistic_Regression.html" rel="alternate" type="text/html" title="Logistic Regression" /><published>2023-05-08T00:00:00+05:30</published><updated>2023-05-08T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Logistic_Regression</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-05-08-Logistic_Regression.html"><![CDATA[<!-- #### What is Logistic Regression? -->
 
 <p>Logistic regression is linear regression over the log odds or logit of the probability of input belonging to a class. The model choice in logistic regression is the logits of the probability are linearly dependent on the independent variable. But the problem we solve with this is the <strong>classification problem</strong>. The output of the model is the probability of the input belonging to a class.
@@ -351,4 +351,70 @@ https://www.pinecone.io/learn/offline-evaluation/</p>
 <h4 id="what-is-the-difference-between-l1-and-l2-regularization">What is the difference between L1 and L2 regularization?</h4>
 <p>L2 regularization is also known as ridge regression. L1 also known as Lasso. The key difference between them is when we take derivative of the loss function for both, In L2 we see the update or change would be 2*coeff but in L1 it would be either 1 or -1. This is the reason why L1 regularization is used for feature selection and drives some of the coefficients to zero. <a href="https://medium.com/@mukulranjan/how-does-lasso-regression-l1-encourage-zero-coefficients-but-not-the-l2-20e4893cba5d">Visit</a></p>
 
-<h1 id="interview-questions">Interview Questions</h1>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[The linear regression establishes a relationship between the dependent variable (y) and one or more independent variables (x) using a best-fit straight line. This means relationship between the dependent and independent variables is linear in nature.]]></summary></entry></feed>
+<h1 id="interview-questions">Interview Questions</h1>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[The linear regression establishes a relationship between the dependent variable (y) and one or more independent variables (x) using a best-fit straight line. This means relationship between the dependent and independent variables is linear in nature.]]></summary></entry><entry><title type="html">Decision Tree</title><link href="http://localhost:4000/ML/jekyll/2023-05-08-Decision_Tree.html" rel="alternate" type="text/html" title="Decision Tree" /><published>2023-05-08T00:00:00+05:30</published><updated>2023-05-08T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Decision_Tree</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-05-08-Decision_Tree.html"><![CDATA[<!-- #### What is Decision Tree? -->
+<p>Decision tree is a type of supervised learning algorithm that can be used for classification and regression the the algorith tries to split the data into different groups based on the features such that it maximizes the information gain or minimizes the entropy. We will take the example of classification to understand the decision tree.</p>
+<h3 id="algorithm">Algorithm:</h3>
+
+<ol>
+  <li>
+    <p>We start with the root node which has all the data points. Now the first step is to split the root node based on the feature the question is how do we decide which feature is a good feature? We use the concept of information gain to decide which feature is a good feature.</p>
+
+    <p><strong>Information Gain</strong>
+ Let’s say we have a feature called color which has 3 values red, blue and green. Now we want to split the data based on this feature. When we split the node based on color we would get three children. We calculate the entropy of the root node and then we calculate the entropy of the child nodes. The entropy of the root node is calculated as follows:</p>
+
+\[Entropy = -\sum_{i=1}^{n} p_i \log_{2}(p_i)\]
+
+    <p>where $p_i$ is the probability of the class $i$ in the root node. Now we calculate the entropy of the child nodes. The entropy of the child nodes is calculated as follows:</p>
+
+\[Child Entropy =   - \sum_{j=1}^{C}\frac{n_j}{n}*\sum_{i=1}^{n_j} p_{ji} \log_{2}(p_{ji})\]
+
+    <p>where $p_{ji}$ is the probability of the class $i$ in the child node \(j\). \(\frac{n_j}{n}\) gives the fraction of data points in a given child node compared to the root node. Now we calculate the information gain as follows:</p>
+
+\[Information Gain = Entropy - Child Entropy\]
+  </li>
+  <li>
+    <p>We calculate the information gain for all the features and we select the feature which has the highest information gain. We split the root node based on this feature.</p>
+  </li>
+  <li>
+    <p>We Repeat the above steps for all the child nodes until we get pure or mixed node to a certain amount or we reach the maximum depth of the tree.</p>
+  </li>
+</ol>
+
+<p><strong>Spliting Criteria for Numerical features</strong></p>
+
+<p>Let’s say we have a feature which is numerical and we want to split the data based on this feature. We first find all the unique values numerical data and sort them, then we find all the mid points between the consecutive values these would be cadidate threshold values. We calculate the information gain for all the threshold values and we select the one which gives the highest information gain.</p>
+
+<p><strong>Stopping Criteria</strong></p>
+<ol>
+  <li>We stop when we reach the maximum depth of the tree.</li>
+  <li>We stop when we reach the minimum number of data points in a leaf node.</li>
+  <li>We stop when we reach the minimum information gain.</li>
+</ol>
+
+<p><strong>Pruning</strong>
+Pruning is a technique in which we remove the nodes which do not add any value to the model.</p>
+
+<p><strong>Gini Index</strong>
+Gini index is a measure of impurity. It is calculated as follows:</p>
+
+\[Gini Index = 1 - \sum_{i=1}^{n} p_i^2\]
+
+<p>where $p_i$ is the probability of the class $i$ in the node.</p>
+
+<p><strong>Pros</strong></p>
+
+<ol>
+  <li>Decision tree is easy to interpret.</li>
+  <li>Decision tree can handle both numerical and categorical data.</li>
+  <li>Minimal impact of outliers.</li>
+  <li>Decision tree can be used for feature selection.</li>
+  <li>Decision tree can be used for regression and classification.</li>
+</ol>
+
+<p><strong>Cons</strong></p>
+
+<ol>
+  <li>Decision tree is prone to overfitting.</li>
+  <li>Decision tree is unstable, small changes in the data can lead to large changes in the structure of the decision tree.</li>
+  <li>Decision tree can create biased trees if some classes dominate.</li>
+</ol>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Decision tree is a type of supervised learning algorithm that can be used for classification and regression the the algorith tries to split the data into different groups based on the features such that it maximizes the information gain or minimizes the entropy. We will take the example of classification to understand the decision tree. Algorithm:]]></summary></entry></feed>
