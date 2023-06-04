@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ML/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ML/" rel="alternate" type="text/html" /><updated>2023-06-04T20:45:47+05:30</updated><id>http://localhost:4000/ML/feed.xml</id><title type="html">ML techniques</title><subtitle>This repo contains the solutions of coding interview questions from various sources.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ML/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ML/" rel="alternate" type="text/html" /><updated>2023-06-05T01:37:26+05:30</updated><id>http://localhost:4000/ML/feed.xml</id><title type="html">ML techniques</title><subtitle>This repo contains the solutions of coding interview questions from various sources.
 </subtitle><author><name>Bhoomeendra Singh Sisodiy</name></author><entry><title type="html">Biase Variance Tradeoff</title><link href="http://localhost:4000/ML/jekyll/2023-06-04-Biase_Variance_Tradeoff.html" rel="alternate" type="text/html" title="Biase Variance Tradeoff" /><published>2023-06-04T00:00:00+05:30</published><updated>2023-06-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Biase_Variance_Tradeoff</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-06-04-Biase_Variance_Tradeoff.html"><![CDATA[<p><a href="https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote12.html">Visit</a></p>
 
 <p>When we talk about the Biase and Variance tradeoff we are talking about the error in the model and these are calculated on multiple(infinte) train and test splits of the data as these measures are statical in nature.</p>
@@ -13,11 +13,11 @@
 
 <p>Let’s say we have 50 models and we have to calculate the variance of the models. We calculate the variance of the model by calculating the variability in the output of the models with the formula of variance.</p>
 
-<p>High variance means that the model is not able to generalize well on the data and is overfitting. This mean that if the model is trained on a different the predictions would change drastically. Low variance means that the model is able to generalize well on the data and is a good situtation to be in.</p>
+<p>High variance means that the model is not able to generalize well on the data and is overfitting. This mean that if the model is trained on a different the predictions would change drastically. Low variance means that the model is able to generalize well on the data and is a good situation to be in.</p>
 
 <p><strong>Tradeoff :</strong></p>
 
-<p>Pursuing low bias requires increasing complexity which increases variance as now the model has room to overfit the data, and pursuing low variance requires decreasing complexity which increases bias.</p>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Visit]]></summary></entry><entry><title type="html">SVM</title><link href="http://localhost:4000/ML/jekyll/2023-06-04-SVM.html" rel="alternate" type="text/html" title="SVM" /><published>2023-06-04T00:00:00+05:30</published><updated>2023-06-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/SVM</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-06-04-SVM.html"><![CDATA[<h3 id="support-vector-machine-for-classification">Support Vector Machine for Classification</h3>
+<p>Pursuing low bias requires increasing complexity which increases variance as now the model has room to overfit the data, and pursuing low variance requires decreasing complexity which increases bias.</p>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Visit]]></summary></entry><entry><title type="html">SVM</title><link href="http://localhost:4000/ML/jekyll/2023-06-04-SVM.html" rel="alternate" type="text/html" title="SVM" /><published>2023-06-04T00:00:00+05:30</published><updated>2023-06-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/SVM</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-06-04-SVM.html"><![CDATA[<h3 id="svm-for-classification">SVM for Classification</h3>
 
 <p>Let’s say we have +ve and -ve classes what SVM tries to do is find a hyperplane such that it maximizes the margin between the +ve and -ve classes.</p>
 
@@ -49,7 +49,77 @@
 
 \[s.t \:\:\: y_i(w^Tx_i + b) \geq 1 - \varepsilon_i  \:\:\: \forall i\]
 
-<p>If we look at the formulation we have added a penalty for error in the earlier formulation error was not possible because of the constraints of the formulation which is equivalent to C being infinity. Now we have a tradeoff between the margin and the error. If we increase C we are penalizing the error more and if we decrease C we are penalizing the margin more.</p>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Support Vector Machine for Classification]]></summary></entry><entry><title type="html">Logistic Regression</title><link href="http://localhost:4000/ML/jekyll/2023-05-08-Logistic_Regression.html" rel="alternate" type="text/html" title="Logistic Regression" /><published>2023-05-08T00:00:00+05:30</published><updated>2023-05-08T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Logistic_Regression</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-05-08-Logistic_Regression.html"><![CDATA[<!-- #### What is Logistic Regression? -->
+<p>If we look at the formulation we have added a penalty for error in the earlier formulation error was not possible because of the constraints of the formulation which is equivalent to C being infinity. Now we have a tradeoff between the margin and the error. If we increase C we are penalizing the error more and if we decrease C we are penalizing the margin more.</p>
+
+<p>We will convert the above formulation into a Lagrangian formulation and solve it using the Lagrangian multipliers. The Lagrangian formulation is as follows:</p>
+
+\[L(w,b,\varepsilon,\alpha,\mu) = \frac{||w||^{2}}{2} + C \frac{1}{n}\sum_{i}^{n}\varepsilon_i - \sum_{i}^{n}\alpha_i(y_i(w^Tx_i + b) - 1 + \varepsilon_i) - \sum_{i}^{n}\mu_i\varepsilon_i\]
+
+<p>We take the partial derivative of the Lagrangian formulation with respect to w,b and \(\varepsilon\) and equate them to 0. We get the following equations:</p>
+
+\[w = \sum_{i}^{n}\alpha_iy_ix_i\]
+
+\[0 = \sum_{i}^{n}\alpha_iy_i\]
+
+\[\alpha_i = C - \mu_i\]
+
+<p>We substitute the above equations in the Lagrangian formulation and we get the following formulation:</p>
+
+\[L(w,b,\varepsilon,\alpha,\mu) = \sum_{i}^{n}\alpha_i - \frac{1}{2}\sum_{i}^{n}\sum_{j}^{n}\alpha_i\alpha_jy_iy_jx_i^Tx_j\]
+
+\[s.t \:\:\: \sum_{i}^{n}\alpha_iy_i = 0\]
+
+\[\alpha_i \geq 0\]
+
+\[\mu_i \geq 0\]
+
+\[\varepsilon_i \geq 0\]
+
+\[0 = \sum_{i}^{n}\alpha_iy_i\]
+
+\[0 = \sum_{i}^{n}\mu_i\varepsilon_i\]
+
+<p>The \(L(w,b,\varepsilon,\alpha,\mu)\) looks the same as the formulation for the dual problem of the Hard SVM the only differece is the constrains. The constrains \(\alpha_i \geq 0\)  ,  \(\mu_i \geq 0\) and \(\alpha_i = C - \mu_i\) we combine these constrains and we get \(0 \leq \alpha_i \leq C\).</p>
+
+<h3 id="model-prediction">Model Prediction</h3>
+
+<p>One’s we have identified the support vectors we can calculate the prediction on test as follows:</p>
+
+\[y = sign(\sum_{i}^{n}\alpha_iy_ix_i^Tx + b)\]
+
+<p>As only the support vectors contribute to the prediction we only need to store the support vectors and the corresponding \(\alpha\) values.</p>
+
+<p>The other important thing to note is that the dot product \(x_i^Tx_j\) can be replaced by a kernel function \(K(x_i,x_j)\).</p>
+
+<h3 id="kernel-trick">Kernel Trick</h3>
+
+<p>The kernel trick is a technique in which we can replace the dot product \(x_i^Tx_j\) with a kernel function \(K(x_i,x_j)\) which is a function which takes two vectors as input and outputs a scalar. The kernel function should satisfy the following properties:</p>
+
+\[K(x_i,x_j) = K(x_j,x_i)\]
+
+\[K(x_i,x_j) \geq 0\]
+
+\[\sum_{i}^{n}\sum_{j}^{n}c_ic_jK(x_i,x_j) \geq 0\]
+
+<p>i.e. Symmetric, Positive Semi-definite.</p>
+
+<p>The kernel function can be used to calculate the similarity between two vectors in a higher dimensional space without actually calculating the dot product in the higher dimensional space.</p>
+
+<p><strong>Example:</strong></p>
+
+<h3 id="kernel-functions">Kernel Functions</h3>
+
+<ol>
+  <li>Linear Kernel: \(K(x_i,x_j) = x_i^Tx_j\)</li>
+  <li>Polynomial Kernel: \(K(x_i,x_j) = (x_i^Tx_j + 1)^d\)</li>
+  <li>Gaussian Kernel(rbf kernel): \(K(x_i,x_j) = exp(-\frac{ \left \|  x_i - x_j \right \| ^2}{2\sigma^2})\)</li>
+</ol>
+
+<p>Gaussian Kernel is the most commonly used kernel function. The hyperparameter \(\sigma\) is the bandwidth of the kernel function.This is seen as \(\left \|  x_i - x_j \right \| ^2\) is the squared distance between the two vectors. The hyperparameter \(\sigma\) controls the kernel function. If \(\sigma\) is small then the kernel function is very sensitive to the distance between the two vectors (only the vectors which have a distance almost zero will be considered similar) and if \(\sigma\) is large then the kernel function is not very sensitive to the distance between the two vectors. <a href="https://towardsdatascience.com/radial-basis-function-rbf-kernel-the-go-to-kernel-acf0d22c798a">Visit</a></p>
+
+<h3 id="svm-for-regression">SVM for Regression</h3>
+
+<p><a href="https://www.niser.ac.in/~smishra/teach/cs460/2020/lectures/lec13_1/">Visit</a></p>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[SVM for Classification]]></summary></entry><entry><title type="html">Logistic Regression</title><link href="http://localhost:4000/ML/jekyll/2023-05-08-Logistic_Regression.html" rel="alternate" type="text/html" title="Logistic Regression" /><published>2023-05-08T00:00:00+05:30</published><updated>2023-05-08T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Logistic_Regression</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-05-08-Logistic_Regression.html"><![CDATA[<!-- #### What is Logistic Regression? -->
 
 <p>Logistic regression is linear regression over the log odds or logit of the probability of input belonging to a class. The model choice in logistic regression is the logits of the probability are linearly dependent on the independent variable. But the problem we solve with this is the <strong>classification problem</strong>. The output of the model is the probability of the input belonging to a class.
 \(logit(p) = log(\frac{p}{p+1})\)</p>

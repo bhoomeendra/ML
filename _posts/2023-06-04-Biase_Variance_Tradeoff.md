@@ -20,7 +20,7 @@ __Variance :__
 
 Let's say we have 50 models and we have to calculate the variance of the models. We calculate the variance of the model by calculating the variability in the output of the models with the formula of variance.
 
-High variance means that the model is not able to generalize well on the data and is overfitting. This mean that if the model is trained on a different the predictions would change drastically. Low variance means that the model is able to generalize well on the data and is a good situtation to be in.
+High variance means that the model is not able to generalize well on the data and is overfitting. This mean that if the model is trained on a different the predictions would change drastically. Low variance means that the model is able to generalize well on the data and is a good situation to be in.
 
 __Tradeoff :__
 
