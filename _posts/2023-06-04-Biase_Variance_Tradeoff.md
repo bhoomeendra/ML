@@ -4,6 +4,7 @@ author: Bhoomeendra
 date: 2023-06-04
 category: Jekyll
 layout: post
+comments: true
 ---
 [Visit](https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote12.html)
 

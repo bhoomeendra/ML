@@ -1,5 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ML/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ML/" rel="alternate" type="text/html" /><updated>2023-07-03T21:08:55+05:30</updated><id>http://localhost:4000/ML/feed.xml</id><title type="html">ML techniques</title><subtitle>This repo contains the solutions of coding interview questions from various sources.
-</subtitle><author><name>Bhoomeendra Singh Sisodiy</name></author><entry><title type="html">Biase Variance Tradeoff</title><link href="http://localhost:4000/ML/jekyll/2023-06-04-Biase_Variance_Tradeoff.html" rel="alternate" type="text/html" title="Biase Variance Tradeoff" /><published>2023-06-04T00:00:00+05:30</published><updated>2023-06-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Biase_Variance_Tradeoff</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-06-04-Biase_Variance_Tradeoff.html"><![CDATA[<p><a href="https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote12.html">Visit</a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ML/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ML/" rel="alternate" type="text/html" /><updated>2023-07-04T16:18:08+05:30</updated><id>http://localhost:4000/ML/feed.xml</id><title type="html">ML techniques</title><subtitle>This repo contains the solutions of coding interview questions from various sources.
+</subtitle><author><name>Bhoomeendra Singh Sisodiy</name></author><entry><title type="html">Naive Bayes</title><link href="http://localhost:4000/ML/jekyll/2023-07-04-Naive-Bayes.html" rel="alternate" type="text/html" title="Naive Bayes" /><published>2023-07-04T00:00:00+05:30</published><updated>2023-07-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Naive-Bayes</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-07-04-Naive-Bayes.html"><![CDATA[<table>
+  <tbody>
+    <tr>
+      <td>Given a problem instance to be classified represented by a vector \(x = (x_1, x_2, ..., x_n)\) representing some \(n\) features and a class label \(y\), it assigns to this instance probabilities $$P(y</td>
+      <td>x_1, x_2, …, x_n)\(for each of\)k\(possible outcomes or classes\)y$$.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The problem with above formulation is that if the no. of features is large or if a feature can take on a large no. of values then basing such a model on probability tables is infeasible.</p>
+
+<p>To get around this problem, we make the assumption that the value of a particular feature is independent of the value of any other feature, given the class variable. This is called the <strong>naive Bayes assumption</strong>.</p>
+
+\[P(C_k|x_1, x_2, ..., x_n) = \frac{P(C_k)P(x_1, x_2, ..., x_n|C_k)}{P(x_1, x_2, ..., x_n)}\]
+
+<p>For a given sample \(P(x_1, x_2, ..., x_n)\) will remain constant, so we can ignore it. So we have:</p>
+
+\[P(C_k|x_1, x_2, ..., x_n) \propto P(C_k)P(x_1, x_2, ..., x_n|C_k)\]
+
+\[P(C_k|x_1, x_2, ..., x_n) \propto P(C_k)P(x_1|C_k)P(x_2|C_k)...P(x_n|C_k)\]
+
+<p>Now we pick the class \(C_k\) that maximizes the above probability.</p>
+
+<h2 id="text-data">Text Data</h2>
+
+<p>Each word is treated as a feature and its frequency in a given class is used to calculate the probability.</p>
+
+<p>How to handle unseen words? We can use Laplace smoothing.</p>
+
+\[P(w_i|C_k) = \frac{count(w_i, C_k) + \alpha}{count(C_k) + \alpha |V|}\]
+
+<table>
+  <tbody>
+    <tr>
+      <td>Where $$</td>
+      <td>V</td>
+      <td>\(is the size of the vocabulary and\)\alpha\(is the smoothing parameter. The smoothing parameter is generally set to 1. If\)\alpha\(is infinity then we probability of all the words will be the same.\)\alpha$$ acts as a regularizer and prevents overfitting.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Another thing to keep in mind is that the product of probabilities can be very small and can lead to underflow. To avoid this we can take the log of the probabilities and add them.</p>
+
+<h2 id="limitations">Limitations</h2>
+<ol>
+  <li>The assumption that the features are independent is not true in most cases.</li>
+  <li>Class imbalance can lead to poor performance as the model will be biased towards the majority class.</li>
+</ol>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Given a problem instance to be classified represented by a vector \(x = (x_1, x_2, ..., x_n)\) representing some \(n\) features and a class label \(y\), it assigns to this instance probabilities $$P(y x_1, x_2, …, x_n)\(for each of\)k\(possible outcomes or classes\)y$$.]]></summary></entry><entry><title type="html">Biase Variance Tradeoff</title><link href="http://localhost:4000/ML/jekyll/2023-06-04-Biase_Variance_Tradeoff.html" rel="alternate" type="text/html" title="Biase Variance Tradeoff" /><published>2023-06-04T00:00:00+05:30</published><updated>2023-06-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Biase_Variance_Tradeoff</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-06-04-Biase_Variance_Tradeoff.html"><![CDATA[<p><a href="https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote12.html">Visit</a></p>
 
 <p>When we talk about the Biase and Variance tradeoff we are talking about the error in the model and these are calculated on multiple(infinte) train and test splits of the data as these measures are statical in nature.</p>
 
@@ -338,65 +385,4 @@ as the resulting covariance matrix will be a square matrix of size \(dxd\) where
   <li>
     <p>PCA is a linear transformation and orthogonal hence it can only capture linear relationships.</p>
   </li>
-</ol>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[The idea of PCA is to find new basis in the same space such that the variance of the data is maximized along the new basis. The new basis are called principal components. The first principal component is the direction along which the variance of the data is maximized. The second principal component is the direction orthogonal to the first principal component along which the variance of the data is maximized. The third principal component is the direction orthogonal to the first two principal components along which the variance of the data is maximized. And so on.]]></summary></entry><entry><title type="html">Logistic Regression</title><link href="http://localhost:4000/ML/jekyll/2023-05-08-Logistic_Regression.html" rel="alternate" type="text/html" title="Logistic Regression" /><published>2023-05-08T00:00:00+05:30</published><updated>2023-05-08T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Logistic_Regression</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-05-08-Logistic_Regression.html"><![CDATA[<!-- #### What is Logistic Regression? -->
-
-<p>Logistic regression is linear regression over the log odds or logit of the probability of input belonging to a class. The model choice in logistic regression is the logits of the probability are linearly dependent on the independent variable. But the problem we solve with this is the <strong>classification problem</strong>. The output of the model is the probability of the input belonging to a class.
-\(logit(p) = log(\frac{p}{p+1})\)</p>
-
-<p>The model is as follows:</p>
-
-\[logit(p) = w^Tx + b\]
-
-\[p = \frac{1}{1+e^{-(w^Tx+b)}}\]
-
-\[p = \sigma(w^Tx+b)\]
-
-<p>What sigmoid does is that it constrains the output between 0 and 1. This is one of the definitions of logistic regression.</p>
-<h3 id="geometric-formulation">Geometric Formulation</h3>
-<p>We can have a geometric explanation as well. We start with a classification boundary which is \(w^Tx +b\). We want a w such that \(\forall i \; y_i(w^Tx_i+b)&gt;=0\) i.e the predicted class and the actual class are of the same sign for the product term to be positive but using a objective function which maximizes \(\sum y_i(w^Tx_i+b)\) has some limitation. The problem is that when an outlier comes, the loss value will be very high, and the model will try to fit the outlier. To solve the problem sigmoid function is used as it constrains the values between 0 and 1 which limits the impact of outlier.</p>
-
-<h3 id="formulation-of-the-loss-function">Formulation of the loss function</h3>
-<p>The purpose of the loss function is to maximize the probability of the correct class. Logistic regression is a binary classification problem; hence we have two classes, 0 and 1. Higher probability is associated with class 1, and low probability is associated with class 0. The objective function is as follows:</p>
-
-\[L = \prod_{i=1}^n p_i^{y_i}(1-p_i)^{1-y_i} \; where \; p = \sigma(w^Tx+b)\]
-
-\[L = \prod_{i=1}^n \sigma(w^Tx_i+b)^{y_i}(1-\sigma(w^Tx_i+b))^{1-y_i}\]
-
-<p>As all the values are always positive, taking log will not affect the optimization problem. Also will help with numerical stability as the probability values are very small and the product will be even smaller. Hence the loss function is as follows:</p>
-
-\[L = \sum_{i=1}^n y_i log(\sigma(w^Tx_i+b)) + (1-y_i)log(1-\sigma(w^Tx_i+b))\]
-
-\[w^* = argmax_w L(w)\]
-
-<p>But still, we have a problem which is that if when w tends to infinity, the we would have the maximum value of the objective function, which is not what we want. Hence we add a regularization term to the objective function. The objective function is as follows:</p>
-
-\[L =  \sum_{i=1}^n y_i log(\sigma(w^Tx_i+b)) + (1-y_i)log(1-\sigma(w^Tx_i+b)) + \lambda ww^T\]
-
-<!-- This theme supports rendering beautiful math in inline and display modes using [MathJax 3](https://www.mathjax.org/) engine. You just need to surround your math expression with `$$`, like `$$ E = mc^2 $$`. If you leave it inside a paragraph, it will produce an inline expression, just like $$ E = mc^2 $$. -->
-
-<!-- To use display mode, again surround your expression with `$$` and place it as a separate paragraph. Here is an example: -->
-
-<!-- $$\sum_{k=1}^\infty |\langle x, e_k \rangle|^2 \leq \|x\|^2$$ -->
-
-<h3 id="interview-questions">Interview Questions</h3>
-
-<p>Should we normailze the data before giving it to the logistice regression algorithim?</p>
-
-<p>Yes we should normalize the data it would give use two problems first is the</p>
-
-<ul>
-  <li>
-    <p>Interpretiblity of the weights/coffecient</p>
-
-    <ul>
-      <li>Interpretiblity of the weights/coffecient as because the coffecient indicats the impact on prediction when we have unit change in the feature but feats with differect scale can not be compaired with each other once we normalize (Min Max) or standardize (\(\mu =0 , \sigma =1\)) the data becomes unitless hence comparative interpretblity is possible which could indicate geniune feature importance.</li>
-    </ul>
-  </li>
-  <li>
-    <p>Convergence of SGD</p>
-
-    <ul>
-      <li>The magnitude of gradient of depends on the values of the inputs which we can see for both squared loss and cross entorpy loss which mean that feature with higher values wil have bigger gradient and features with smaller values will have smaller gradient hence convergence would led to ossilation but when the data is normalized such problem is prevented.</li>
-    </ul>
-  </li>
-</ul>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</ol>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[The idea of PCA is to find new basis in the same space such that the variance of the data is maximized along the new basis. The new basis are called principal components. The first principal component is the direction along which the variance of the data is maximized. The second principal component is the direction orthogonal to the first principal component along which the variance of the data is maximized. The third principal component is the direction orthogonal to the first two principal components along which the variance of the data is maximized. And so on.]]></summary></entry></feed>

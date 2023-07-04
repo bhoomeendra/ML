@@ -4,6 +4,7 @@ author: Bhoomeendra
 date: 2023-06-04
 category: Jekyll
 layout: post
+comments: true
 ---
 Hierarchical Clustering is of two types which are Divisive and Agglomerative.
 
