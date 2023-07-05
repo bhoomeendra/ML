@@ -1,12 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ML/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ML/" rel="alternate" type="text/html" /><updated>2023-07-04T16:18:08+05:30</updated><id>http://localhost:4000/ML/feed.xml</id><title type="html">ML techniques</title><subtitle>This repo contains the solutions of coding interview questions from various sources.
-</subtitle><author><name>Bhoomeendra Singh Sisodiy</name></author><entry><title type="html">Naive Bayes</title><link href="http://localhost:4000/ML/jekyll/2023-07-04-Naive-Bayes.html" rel="alternate" type="text/html" title="Naive Bayes" /><published>2023-07-04T00:00:00+05:30</published><updated>2023-07-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Naive-Bayes</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-07-04-Naive-Bayes.html"><![CDATA[<table>
-  <tbody>
-    <tr>
-      <td>Given a problem instance to be classified represented by a vector \(x = (x_1, x_2, ..., x_n)\) representing some \(n\) features and a class label \(y\), it assigns to this instance probabilities $$P(y</td>
-      <td>x_1, x_2, …, x_n)\(for each of\)k\(possible outcomes or classes\)y$$.</td>
-    </tr>
-  </tbody>
-</table>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ML/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ML/" rel="alternate" type="text/html" /><updated>2023-07-06T04:54:34+05:30</updated><id>http://localhost:4000/ML/feed.xml</id><title type="html">ML techniques</title><subtitle>This repo contains the solutions of coding interview questions from various sources.
+</subtitle><author><name>Bhoomeendra Singh Sisodiy</name></author><entry><title type="html">Naive Bayes</title><link href="http://localhost:4000/ML/jekyll/2023-07-04-Naive-Bayes.html" rel="alternate" type="text/html" title="Naive Bayes" /><published>2023-07-04T00:00:00+05:30</published><updated>2023-07-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Naive-Bayes</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-07-04-Naive-Bayes.html"><![CDATA[<p>Given a problem instance to be classified represented by a vector \(x = (x_1, x_2, ..., x_n)\) representing some \(n\) features and a class label \(y\), it assigns to this instance probabilities \(P(y\|x_1, x_2, ..., x_n)\) for each of \(k\) possible outcomes or classes \(y\).</p>
 
 <p>The problem with above formulation is that if the no. of features is large or if a feature can take on a large no. of values then basing such a model on probability tables is infeasible.</p>
 
@@ -30,15 +23,7 @@
 
 \[P(w_i|C_k) = \frac{count(w_i, C_k) + \alpha}{count(C_k) + \alpha |V|}\]
 
-<table>
-  <tbody>
-    <tr>
-      <td>Where $$</td>
-      <td>V</td>
-      <td>\(is the size of the vocabulary and\)\alpha\(is the smoothing parameter. The smoothing parameter is generally set to 1. If\)\alpha\(is infinity then we probability of all the words will be the same.\)\alpha$$ acts as a regularizer and prevents overfitting.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Where \(\|V\|\) is the size of the vocabulary and \(\alpha\) is the smoothing parameter. The smoothing parameter is generally set to 1. If \(\alpha\) is infinity then we probability of all the words will be the same. \(\alpha\) acts as a regularizer and prevents overfitting.</p>
 
 <p>Another thing to keep in mind is that the product of probabilities can be very small and can lead to underflow. To avoid this we can take the log of the probabilities and add them.</p>
 
@@ -46,7 +31,7 @@
 <ol>
   <li>The assumption that the features are independent is not true in most cases.</li>
   <li>Class imbalance can lead to poor performance as the model will be biased towards the majority class.</li>
-</ol>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Given a problem instance to be classified represented by a vector \(x = (x_1, x_2, ..., x_n)\) representing some \(n\) features and a class label \(y\), it assigns to this instance probabilities $$P(y x_1, x_2, …, x_n)\(for each of\)k\(possible outcomes or classes\)y$$.]]></summary></entry><entry><title type="html">Biase Variance Tradeoff</title><link href="http://localhost:4000/ML/jekyll/2023-06-04-Biase_Variance_Tradeoff.html" rel="alternate" type="text/html" title="Biase Variance Tradeoff" /><published>2023-06-04T00:00:00+05:30</published><updated>2023-06-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Biase_Variance_Tradeoff</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-06-04-Biase_Variance_Tradeoff.html"><![CDATA[<p><a href="https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote12.html">Visit</a></p>
+</ol>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Given a problem instance to be classified represented by a vector \(x = (x_1, x_2, ..., x_n)\) representing some \(n\) features and a class label \(y\), it assigns to this instance probabilities \(P(y\|x_1, x_2, ..., x_n)\) for each of \(k\) possible outcomes or classes \(y\).]]></summary></entry><entry><title type="html">Biase Variance Tradeoff</title><link href="http://localhost:4000/ML/jekyll/2023-06-04-Biase_Variance_Tradeoff.html" rel="alternate" type="text/html" title="Biase Variance Tradeoff" /><published>2023-06-04T00:00:00+05:30</published><updated>2023-06-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Biase_Variance_Tradeoff</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-06-04-Biase_Variance_Tradeoff.html"><![CDATA[<p><a href="https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote12.html">Visit</a></p>
 
 <p>When we talk about the Biase and Variance tradeoff we are talking about the error in the model and these are calculated on multiple(infinte) train and test splits of the data as these measures are statical in nature.</p>
 
@@ -230,9 +215,35 @@
 
 <p>Discuss how bagging handles imbalanced datasets and its impact on the performance of the ensemble?</p>
 
-<p>Bagging can help in cases of data imbalace as we are sampling the data with replacement. This means that the minority class can be sampled more and if needed we can also oversample the minority class. This will help in improving the performance of the model.</p>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Given a standard training set \(D\) of size n, bagging generates m new training sets \(D_{i}\), each of size n′, by sampling from \(D\) uniformly and with replacement. By sampling with replacement, some observations may be repeated in each \(D_{i}\).]]></summary></entry><entry><title type="html">Boosting</title><link href="http://localhost:4000/ML/jekyll/2023-06-04-Boosting.html" rel="alternate" type="text/html" title="Boosting" /><published>2023-06-04T00:00:00+05:30</published><updated>2023-06-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Boosting</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-06-04-Boosting.html"><![CDATA[<p>Can a set of weak learners create a single strong learner? A weak learner is defined to be a classifier that is only slightly correlated with the true classification (it can label examples better than random guessing). In contrast, a strong learner is a classifier that is arbitrarily well-correlated with the true classification.</p>
+<p>Bagging can help in cases of data imbalace as we are sampling the data with replacement. This means that the minority class can be sampled more and if needed we can also oversample the minority class. This will help in improving the performance of the model.</p>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Given a standard training set \(D\) of size n, bagging generates m new training sets \(D_{i}\), each of size n′, by sampling from \(D\) uniformly and with replacement. By sampling with replacement, some observations may be repeated in each \(D_{i}\).]]></summary></entry><entry><title type="html">Boosting</title><link href="http://localhost:4000/ML/jekyll/2023-06-04-Boosting.html" rel="alternate" type="text/html" title="Boosting" /><published>2023-06-04T00:00:00+05:30</published><updated>2023-06-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/Boosting</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-06-04-Boosting.html"><![CDATA[<p>Can a set of weak learners create a single strong learner? A weak learner is defined to be a classifier that is only slightly correlated with the true classification (it can label examples better than random guessing). In contrast, a strong learner is a classifier that is arbitrarily well-correlated with the true classification. Boosting is One of the methods to do so.</p>
 
-<h3 id="gradient-boosting">Gradient Boosting</h3>]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Can a set of weak learners create a single strong learner? A weak learner is defined to be a classifier that is only slightly correlated with the true classification (it can label examples better than random guessing). In contrast, a strong learner is a classifier that is arbitrarily well-correlated with the true classification.]]></summary></entry><entry><title type="html">DBSCAN</title><link href="http://localhost:4000/ML/jekyll/2023-06-04-DBSCAN.html" rel="alternate" type="text/html" title="DBSCAN" /><published>2023-06-04T00:00:00+05:30</published><updated>2023-06-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/DBSCAN</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-06-04-DBSCAN.html"><![CDATA[<p>Density-based spatial clustering of applications with noise (DBSCAN) is a clustering algorithm that can handle clusters with different densities. The basic idea is as follows the dense region is the cluster the sparce region is considered noise.  Some of the important definitions are as follows:</p>
+<p>The idea of boosting is to iteratilvely add weak learners each one is trained by taking into account the previous learners’ mistakes. In the end, the weak learners are combined to form a single strong learner.</p>
+
+<p>We can think of boosting using residual error. The idea is to fit a model to the residuals from the previous model. Beaucse the residuals are the errors that the previous model could not fit, a new model that focuses on them will improve the overall fit.</p>
+
+<h3 id="gradient-boosting">Gradient Boosting</h3>
+
+<p>Ref: https://en.wikipedia.org/wiki/Gradient_boosting</p>
+
+<p>Slides : http://www.chengli.io/tutorials/gradient_boosting.pdf</p>
+
+<p>The method which is based of residual error is not flexible enough to be applied to a wide range of loss functions also it is more prone to outliers. Gradient boosting is performing boosting using gradient descent optimization. It is a generalization of boosting to arbitrary differentiable loss functions. It is a greedy algorithm and can overfit if run for too many iterations.</p>
+
+<p>We start with a base learner $F_0(x)$ and then we fit a model to the -ve gradients of the previous model. The model is fit by minimizing the loss function $L(y, F_{m-1}(x))$ wrt $F_{m-1}(x)$. This is done by fitting a weak learner $h_m(x)$ to the gradient $y - F_{m-1}(x)$ (in case of squared loss). The model is then updated by adding the new model $h_m(x)$ to the previous model $F_{m-1}(x)$.</p>
+
+\[F_m(x) = F_{m-1}(x) + \gamma_{m} h_m(x)\]
+
+<p>We also find the optimal step size $\gamma_m$ by minimizing the loss function wrt $\gamma_m$.</p>
+
+\[\gamma_m = argmin_{\gamma} \sum_{i=1}^{N} L(y_i, F_{m-1}(x_i) + \gamma h_m(x_i))\]
+
+<p>We do this for $M$ iterations and then we have the final model $F_M(x)$. The final model is a weighted sum of the weak learners.</p>
+
+\[F_M(x) = \sum_{m=1}^{M} \gamma_m h_m(x)\]
+
+<p>While training the model we can also use a learning rate $\eta$ to control the contribution of each weak learner. The learning rate is used to shrink the contribution of each weak learner. This is done by multiplying the weak learner by the learning rate $\eta$. This help in reducing the overfitting of the model (Regularization).</p>
+
+\[F_m(x) = F_{m-1}(x) + \eta \gamma_{m} h_m(x)\]]]></content><author><name>Bhoomeendra</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Can a set of weak learners create a single strong learner? A weak learner is defined to be a classifier that is only slightly correlated with the true classification (it can label examples better than random guessing). In contrast, a strong learner is a classifier that is arbitrarily well-correlated with the true classification. Boosting is One of the methods to do so.]]></summary></entry><entry><title type="html">DBSCAN</title><link href="http://localhost:4000/ML/jekyll/2023-06-04-DBSCAN.html" rel="alternate" type="text/html" title="DBSCAN" /><published>2023-06-04T00:00:00+05:30</published><updated>2023-06-04T00:00:00+05:30</updated><id>http://localhost:4000/ML/jekyll/DBSCAN</id><content type="html" xml:base="http://localhost:4000/ML/jekyll/2023-06-04-DBSCAN.html"><![CDATA[<p>Density-based spatial clustering of applications with noise (DBSCAN) is a clustering algorithm that can handle clusters with different densities. The basic idea is as follows the dense region is the cluster the sparce region is considered noise.  Some of the important definitions are as follows:</p>
 
 <ol>
   <li>
