@@ -18,7 +18,7 @@ The first problem is tokenization how do we convert sentences into tokens this i
 3. Merge the most frequent pair of characters into a single character.
 4. Repeat step 2 and 3 until the vocabulary size reaches the desired size.
 
-We now have a list of tokens that are used to tokenize the sentences in the dataset. We will use the tokens to convert the sentences into vectors with the help of an embedding layer every token will be mapped to a vector based on its token id. Now we add position encoding with this because transformer in it self is position invariant so we need to add position encoding to the tokens. The position encoding is a vector that is added to the embedding vector. The position encoding is a vector that is generated based on the position of the token in the sentence. The position encoding is generated using the following formula:
+We now have a list of tokens that are used to tokenize the sentences in the dataset. We will use the tokens to convert the sentences into vectors with the help of an embedding layer every token will be mapped to a vector based on its token id. We also add CLS , Start and End token to each sentence. Now we add position encoding with this because transformer in it self is position invariant so we need to add position encoding to the tokens. The position encoding is a vector that is added to the embedding vector. The position encoding is a vector that is generated based on the position of the token in the sentence. The position encoding is generated using the following formula:
 
 $$ PE_{(pos, 2i)} = sin(pos/10000^{2i/d_{model}}) $$
 $$ PE_{(pos, 2i+1)} = cos(pos/10000^{2i/d_{model}}) $$
@@ -29,11 +29,12 @@ The embedding vector is passed through an encoder. The encoder is a stack of $N$
 
 We have embedding combined with position encoding as $$X_{nxd}$$ where n is the number of words and d is the dimension of the embedding vector. Now in self-attention block, we have 3 learnable matrices which are $$W_{q}$$, $$W_{k}$$ and $$W_{v}$$ which are of the dimension $$ d x 64 $$ and used to generate query, key and value vectors. We get $$ Q = XW_{q} $$ $$ K = XW_{k} $$ $$ V = XW_{v} $$ hence we get $$ Q_{nx64} $$, $$ K_{nx64} $$ and $$ V_{nx64} $$.
 
-Now we calculate the attention weights by using $$ Q $$ and $$ K $$ as follows $$ A = softmax(\frac{QK^{T}}{\sqrt{d}}) $$ where $$ A_{nxn} $$ is the attention matrix (The softmax is along the rows of the attention matrix). Now we calculate the output of the self-attention block as follows $$ O = AV $$ where $$ O_{nx64} $$ is the output of the self-attention block.
+Now we calculate the attention weights by using $$ Q $$ and $$ K $$ as follows $$ A = softmax(\frac{QK^{T}}{\sqrt{d}}) $$ where $$ A_{nxn} $$ is the attention matrix (The softmax is along the rows of the attention matrix). As dot product is sensitive to dimensonality of the vectors. Now we calculate the output of the self-attention block as follows $$ O = AV $$ where $$ O_{nx64} $$ is the output of the self-attention block.
 
 Now we will have this output for multiple attention heads. We will have 8 attention heads. We will have 8 $$ Q $$, $$ K $$ and $$ V $$ matrices. We will concatenate the output of all the attention heads to get the final output this will be $$ O_{nx8x64} $$. Now this is multiplied with a learnable matrix $$ W_{o} $$ of dimension $$ 8x64 x d $$ to get the final output of the self-attention block as $$ O_{nxd} $$. Now we add a residual connection to the output of the self-attention block as follows $$ O_{nxd} = O_{nxd} + X_{nxd} $$. Now we pass this output through a layer normalization layer to get the final output of the self-attention block as follows $$ O_{nxd} = LN(O_{nxd}) $$.
 
 After this we pass the output of the self-attention block through a feed-forward network. The feed-forward network is a simple network with two linear layers with a ReLU activation function in between. $$FF(x) = max(0,xW_1+b_1)W_2 + b_2 $$ The output of the feed-forward network is added to the output of the self-attention block as follows $$ O_{nxd} = O_{nxd} + FF(O_{nxd}) $$ where $$ FF $$ is the feed-forward network. Now we pass this output through a layer normalization layer to get the final output of the encoder block as follows $$ O_{nxd} = LN(O_{nxd}) $$.
 
-We have 6 such encoder blocks.  
+We have 6 such encoder blocks stacked on top of each other.
 
+Now we can use the output of the encoder block to generate the output in the target language. First we put  
