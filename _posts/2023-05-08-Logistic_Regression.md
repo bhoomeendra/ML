@@ -9,7 +9,7 @@ comments: true
 <!-- #### What is Logistic Regression? -->
 
 Logistic regression is linear regression over the log odds or logit of the probability of input belonging to a class. The model choice in logistic regression is the logits of the probability are linearly dependent on the independent variable. But the problem we solve with this is the __classification problem__. The output of the model is the probability of the input belonging to a class.
-$$ logit(p) = log(\frac{p}{p+1}) $$
+$$ logit(p) = log(\frac{p}{p-1}) $$
 
 The model is as follows:
 
@@ -48,9 +48,9 @@ $$ L =  \sum_{i=1}^n y_i log(\sigma(w^Tx_i+b)) + (1-y_i)log(1-\sigma(w^Tx_i+b)) 
 
 ### Interview Questions
 
-Should we normailze the data before giving it to the logistice regression algorithim?
+* **Should we normailze the data before giving it to the logistice regression algorithim?**
 
-Yes we should normalize the data it would give use two problems first is the 
+    Yes we should normalize the data it would give use two problems first is the 
 
 - Interpretiblity of the weights/coffecient
 
@@ -58,4 +58,43 @@ Yes we should normalize the data it would give use two problems first is the
 
 - Convergence of SGD
 
-    - The magnitude of gradient of depends on the values of the inputs which we can see for both squared loss and cross entorpy loss which mean that feature with higher values wil have bigger gradient and features with smaller values will have smaller gradient hence convergence would led to ossilation but when the data is normalized such problem is prevented. 
+    The magnitude of gradient of depends on the values of the inputs which we can see for both squared loss and cross entorpy loss which mean that feature with higher values wil have bigger gradient and features with smaller values will have smaller gradient hence convergence would led to ossilation but when the data is normalized such problem is prevented.
+
+* **What is the decsion boundary of logistic regression?**
+
+    The decision boundary of the logistic regression is $$ w^Tx +b = 0 $$ which we  can see from the formula of the probability of the input belonging to a class. We can see that the probability is 0.5 when $$ w^Tx +b = 0 $$ and the probability is greater than 0.5 when $$ w^Tx +b > 0 $$ and the probability is less than 0.5 when $$ w^Tx +b < 0 $$.
+
+* **Impact of Outliers on Logistic Regression**
+
+    Logistic regression is robust to outliers as the loss function is not affected by the outliers as the loss function is the log of the probability of the input belonging to a class. The probability is always between 0 and 1. Hence the loss function is not affected by the outliers.
+
+* **How do we handle categorical variables in Logistic Regression?**
+
+    We can use one hot encoding to handle categorical variables in logistic regression. We can use one hot encoding to convert the categorical variables into numerical variables. We can also use label encoding to convert the categorical variables into numerical variables. But label encoding is not preferred as it will give the numerical variables some order which is might not be the case in categorical variables.
+
+* **Assumptions of Logistic Regression**
+
+    The assumptions of logistic regression are as follows:
+
+    - The dependent variable should be binary.
+    - The independent variables should be linearly related to the log odds.
+    - There should not be any multicollinearity among the independent variables.
+    - The independent variables should not be correlated with each other.
+    - Data should be linearly separable.
+
+* **Why is Logistic Regression termed as Regression and not classification?**
+
+    The idea with classfication model is that most of them output discrete values like 0 or 1 or 1 or 2 or 2 or 3. But logistic regression outputs the probability of the input belonging to a class hence we have infite possible outcome. Hence it is termed as regression and not classification. Along with this logistic regression is a linear model on the log odds of the input belonging to a class.
+
+* **Why can’t we use Mean Square Error (MSE) as a cost function for Logistic Regression?**
+    Logistic Regression with MSE as a cost function is a non-convex optimization problem.For problems with non-convex optimization problems, there is no guarantee that the algorithm will converge to the global minimum. Hence we use cross-entropy loss as the cost function for logistic regression which is a convex optimization problem.
+
+* **Disadantages of Logistic regression**
+    
+    - Doesn't have the ability to handle categorical variables with multiple values (unless you use one-hot encoding to create one feature column per category).
+    - Assumption of linearity between dependent and independent variables.
+    - It is tough to obtain complex relationships using logistic regression.
+    - It requires average or no multicollinearity between independent variables.
+    - It requires a large sample size to achieve stable results.
+
+# Chi-Square Test for feature selection and techinques like SMOTE and Near Miss for handling imbalanced data
