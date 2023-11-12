@@ -9,14 +9,13 @@ comments: true
 From input to output, all steps and methods are presented for generic classification.
 
 1. Data
-
 2. Preprocessing
- 1. Normalization
- 2. Augmentation
+    1. Normalization
+    2. Augmentation
 
 3. Model
- 1. Parameter Initialization
- 2. Regularization (L1, L2, Dropout, Batch Normalization, Early Stopping, Layer Normalization) 
+    1. Parameter Initialization
+    2. Regularization (L1, L2, Dropout, Batch Normalization, Early Stopping, Layer Normalization) 
 
 4. Loss
 

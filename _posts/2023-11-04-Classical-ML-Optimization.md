@@ -100,6 +100,10 @@ Methods to handle missing values
     The above steps are repeated for a set number of iterations as the values that were missing in the first iteration are marked we can update them in the next iteration.
 
 ## Outliers
+
+**RANDOM SAMPLE CONSENSUS (RANSAC)** is an iterative method where we fit a the model on the subset of the data and then marks the points within a $\epsilon$ error margin as inliers. The process is repeated for a set number of iterations and the model with the highest number of inliers is selected. The algorithm is robust to outliers as it only considers the points that are close to the line. Also ones we have the best model we can use the inliers to fit the model again. The method is computationally expensive as we need to fit the model multiple times.
+
+
 **Local Outlier Factor (LOF)** is an algorithm for identifying density-based local outliers. It computes the local density deviation of a given data point with respect to its neighbors. The idea is to detect the samples that have a substantially lower density than their neighbors. These are considered to be outliers.
 
 ## Data Imbalance

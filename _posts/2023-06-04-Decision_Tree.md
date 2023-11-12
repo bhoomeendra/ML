@@ -74,3 +74,38 @@ We minimize the sum of squared error at each split. And the prediction is the me
 
 2. We repeat the above step for all the child nodes until we reach the maximum depth of the tree or we reach the minimum number of data points in a leaf node.
 
+## Interview Questions
+
+**1. What is impact of outliers on decision tree?**
+
+Decision tree by design is not intrested in the actual values but it is intrested in the features and thresholds. So the outliers will not have much impact on the decision tree.
+
+**2. What is the difference between Gini Index and Entropy?**
+
+Gini Index is a measure of impurity and Entropy is a measure of randomness. Gini Index is faster to calculate compared to Entropy also Gini index is bounded between 0 and 1 whereas Entropy is not bounded.
+
+**3. What is the impact of data imbalance on decision tree?**
+
+Decision tree is prone to bias if the data is imbalanced as it will impact the information gain calculation. 
+
+**4. What is the impact of data preprocessing on decision tree?**
+
+Decision tree is not impacted by data preprocessing like normalization and scaling.
+
+**5. Time complexity of decision tree?**
+
+The time complexity for decision trees is $$O(Nkd)$$ where n in the number of datapoints k is number of features and d is the depth . $$O(NK)$$ is the complexity for finding the best split at a level and we had d such levels . This means that it’s actually somewhere in between being in O(NklogN) and O(N2k) as best possible depth for binary tree is log(N) and worst is N.
+
+**6. What is the Inductive Bias of Decision Trees?**
+
+ID3 Algorithm prefers shorter trees over longer trees.
+    
+**7. Why do we require Pruning in Decision Trees?**
+    
+Pruning is a technique in which we remove the nodes which do not add any value to the model. Decision tree is prone to overfitting and pruning helps in reducing the overfitting. Pruning can be done in two ways pre-pruning and post-pruning. In pre-pruning we stop the tree from growing when we reach the maximum depth of the tree or when we reach the minimum number of data points in a leaf node or when we reach the minimum information gain. In post-pruning we grow the tree to the maximum depth and then we remove the nodes which do not add any value to the model.
+
+**8. What kind of decision boundary does decision tree create?**
+
+Decision tree creates a piecewise constant decision boundary. The boundary is parallel to the axis.
+
+

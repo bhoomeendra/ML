@@ -19,6 +19,8 @@ For a given sample $$ P(x_1, x_2, ..., x_n) $$ will remain constant, so we can i
 
 $$ P(C_k|x_1, x_2, ..., x_n) \propto P(C_k)P(x_1, x_2, ..., x_n|C_k) $$
 
+Now we make the naive Bayes assumption that the features are conditionally independent given the class.
+
 $$ P(C_k|x_1, x_2, ..., x_n) \propto P(C_k)P(x_1|C_k)P(x_2|C_k)...P(x_n|C_k) $$
 
 Now we pick the class $$C_k$$ that maximizes the above probability.
@@ -31,7 +33,6 @@ $$ P(x_i|C_k) = \frac{1}{\sqrt{2\pi\sigma_{C_k}^2}}e^{-\frac{(x_i - \mu_{C_k})^2
 $\mu_{C_k} , \sigma_{C_k}$ for the give feature. 
 
 The PDF(X) is the probability density function of the normal distribution but can be used to calculate the probability of a given value of $$x_i$$ because we are not interested in calculating the exact probability but only the relative probability and for sufficiently small intervals the probability density is proportional to the probability.
-
 
 ## Text Data
 
