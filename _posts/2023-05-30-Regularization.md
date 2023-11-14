@@ -6,7 +6,7 @@ category: Jekyll
 layout: post
 comments: true
 ---
-Regularization is a technique to reduce overfitting in a model. It discourages learning a more complex model, so as to avoid the risk of overfitting. Regularization is somtime introduce for sparcity i.e in the case of L1 regularization and faster and stable convergence (Batch and layer norm). 
+Regularization is a technique to reduce overfitting in a model. It discourages learning a more complex model, so as to avoid the risk of overfitting. Regularization somtime is introduced for sparcity i.e in the case of L1 regularization and in others for faster and stable convergence (Batch and layer norm). 
 
 __L1, L2 Regularization:__
 

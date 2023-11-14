@@ -97,4 +97,6 @@ $$ L =  \sum_{i=1}^n y_i log(\sigma(w^Tx_i+b)) + (1-y_i)log(1-\sigma(w^Tx_i+b)) 
     - It requires average or no multicollinearity between independent variables.
     - It requires a large sample size to achieve stable results.
 
-# Chi-Square Test for feature selection and techinques like SMOTE and Near Miss for handling imbalanced data
+* **Which is better SVM or Logistic Regression when the data has outliers**
+
+    SVM is better than logistic regression when the data has outliers. Because only the points near the decision boundary affect the behavior of the SVM. Hence the outliers will not affect the behavior of the SVM. Even though logistic regression is robust to outliers, the outliers will still contribute to the loss function. Hence SVM is better than logistic regression when the data has outliers.
